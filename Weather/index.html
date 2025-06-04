@@ -5,16 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Weather App</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
+  <div class="background-shapes">
+    <div class="circle"></div>
+    <div class="triangle"></div>
+    <div class="square"></div>
+  </div>
+
   <div class="weather-app">
     <h1>Weather App</h1>
-    <input
-      type="text"
-      id="cityInput"
-      placeholder="Enter city name"
-      autocomplete="off"
-    />
+    <input type="text" id="cityInput" placeholder="Enter city name" autocomplete="off" />
     <button id="searchBtn">Get Weather</button>
 
     <div id="weatherResult" class="hidden">

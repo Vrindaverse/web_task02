@@ -26,15 +26,15 @@ window.addEventListener('load', () => {
   });
 });
 
-// Cards click handlers remain same (optional)
 document.getElementById('calculator').addEventListener('click', () => {
-  alert('Go to Calculator page');
+  window.location.href = 'Calculator/index.html';
 });
 
 document.getElementById('ticTacToe').addEventListener('click', () => {
-  alert('Go to Tic Tac Toe page');
+  window.location.href = 'TicTacToe/index.html';
 });
 
 document.getElementById('weather').addEventListener('click', () => {
-  alert('Go to Weather page');
+  window.location.href = 'Weather/index.html';
 });
+

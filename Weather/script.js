@@ -11,6 +11,12 @@ const humidity = document.getElementById('humidity');
 const wind = document.getElementById('wind');
 const errorMsg = document.getElementById('error');
 
+// Animate entry
+gsap.from(".weather-app", { duration: 1, y: -50, opacity: 0, ease: "bounce" });
+gsap.to(".circle", { y: 20, duration: 3, repeat: -1, yoyo: true, ease: "sine.inOut" });
+gsap.to(".square", { x: 30, duration: 4, repeat: -1, yoyo: true, ease: "power1.inOut" });
+gsap.to(".triangle", { rotation: 360, duration: 10, repeat: -1, ease: "linear" });
+
 searchBtn.addEventListener('click', () => {
   const city = cityInput.value.trim();
   if (!city) {
@@ -60,11 +66,13 @@ function showWeather(data) {
   wind.textContent = `Wind Speed: ${data.current.wind_kph} kph`;
 
   weatherResult.classList.remove('hidden');
+  gsap.from("#weatherResult", { opacity: 0, y: 20, duration: 0.6 });
 }
 
 function showError(message) {
   errorMsg.textContent = message;
   errorMsg.classList.remove('hidden');
+  gsap.from("#error", { opacity: 0, y: 10, duration: 0.4 });
 }
 
 function clearError() {
